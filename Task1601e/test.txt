@@ -1,0 +1,42 @@
+
+a.pinMode(2,'INPUT');%btn 1
+a.pinMode(3,'INPUT');%btn 2
+a.pinMode(4,'INPUT');%btn 3
+
+a.pinMode(6,'OUTPUT');% led 1
+a.pinMode(7,'OUTPUT');% led 2
+a.pinMode(8,'OUTPUT');% led 3
+a.pinMode(9,'OUTPUT');% Bigled 4
+
+a.digitalWrite(6,0);
+a.digitalWrite(7,0);
+a.digitalWrite(8,0);
+a.digitalWrite(9,0);
+
+k1=0;
+k2=0;
+k3=0;
+
+while(1)
+    
+    k1 = ~a.digitalRead(2);
+    k2 = ~a.digitalRead(3);
+    k3 = ~a.digitalRead(4);
+    
+    
+    if btn1
+        a.digitalWrite(6,1);
+    end
+    
+    if btn2
+        a.digitalWrite(7,1);
+    end
+    
+    if btn3
+        a.digitalWrite(8,1);
+    end
+    
+    if btn1 & btn2 & btn3
+        a.digitalWrite(9,1);
+    end
+end

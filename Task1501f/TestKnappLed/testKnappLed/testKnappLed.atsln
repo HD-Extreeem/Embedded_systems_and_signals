@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "testKnappLed", "testKnappLed\testKnappLed.cproj", "{6F55A744-1289-49F7-9D2D-7572C03B7DFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F55A744-1289-49F7-9D2D-7572C03B7DFE}.Debug|ARM.ActiveCfg = Debug|ARM
+		{6F55A744-1289-49F7-9D2D-7572C03B7DFE}.Debug|ARM.Build.0 = Debug|ARM
+		{6F55A744-1289-49F7-9D2D-7572C03B7DFE}.Release|ARM.ActiveCfg = Release|ARM
+		{6F55A744-1289-49F7-9D2D-7572C03B7DFE}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

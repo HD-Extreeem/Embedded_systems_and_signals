@@ -1,0 +1,57 @@
+void TC0_Handler(void)
+{
+	static float xbuff[M+1] = {0};
+	static float b[M+1]={0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1};
+		
+	volatile uint32_t ul_dummy;
+	uint32_t invalue, outvalue;
+	float value=0;
+
+	/* Clear status bit to acknowledge interrupt */
+	ul_dummy = tc_get_status(TC0, 0);			//The compare bit is cleared by reading the register, manual p. 915
+
+	/* Avoid compiler warning */
+	UNUSED(ul_dummy);
+	
+	ioport_set_pin_level(CHECK_PIN,HIGH);		//put test pin HIGH 
+	
+	adc_start(ADC); 
+	while((adc_get_status(ADC) & 0x1<<24)==0);  //Wait until DRDY get high
+
+	invalue=adc_get_latest_value(ADC);			//get input value
+	
+	
+	for (uint32_t k=M;k>0;k--)
+	{
+		xbuff[k]=xbuff[k-1];
+	}
+	
+	xbuff[0]=(float)invalue;
+	
+	for (uint32_t x=0;x<M+1;x++)
+	{
+		value+=b[x] * xbuff[x];
+	}
+	
+	outvalue=(uint32_t)value;
+	
+	//************
+	// Here should signal processing code be placed
+	//static uint16_t buffer[10000]={0};
+	//static uint32_t k=0;
+	//buffer[k]=invalue;
+	//k++;
+	//if (k==10000)
+	//{
+		//k=0;
+	//}
+	
+	//outvalue=buffer[k]+invalue;
+	
+	//***********
+		
+	dacc_write_conversion_data(DACC,outvalue);	//send output value to DAC
+	
+	ioport_set_pin_level(CHECK_PIN,LOW);		//put test pin LOW
+	
+}

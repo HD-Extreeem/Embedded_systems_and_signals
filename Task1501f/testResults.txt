@@ -1,0 +1,27 @@
+
+../test/test_stateMachine.c:10:test_stateMachineStartsInLockedState:PASS
+
+../test/test_stateMachine.c:20:test_stateGoesToPushOneWhenFirstCorrectButtonIsPressed:PASS
+
+../test/test_stateMachine.c:22:test_stateGoesToLockedWhenFirstIncorrectButtonIsPressed:PASS
+
+../test/test_stateMachine.c:30:test_stateGoesToPushTwoWhenSecondCorrectButtonIsPressed:PASS
+
+../test/test_stateMachine.c:32:test_stateGoesToLockedWhenSecondIncorrectButtonIsPressed:PASS
+
+../test/test_stateMachine.c:40:test_stateGoesToPushThreeWhenThirdCorrectButtonIsPressed:PASS
+
+../test/test_stateMachine.c:42:test_stateGoesToLockedWhenThirdIncorrectButtonIsPressed:PASS
+
+../test/test_stateMachine.c:50:test_stateGoesToOpenWhenFourthCorrectButtonIsPressed:PASS
+
+../test/test_stateMachine.c:52:test_stateGoesToLockedWhenFourthIncorrectButtonIsPressed:PASS
+
+
+-----------------------
+
+9 Tests 0 Failures 0 Ignored 
+OK
+
+>>> 2016-12-14 08:32:47 D:\Task1501f\testResults.txt
+
